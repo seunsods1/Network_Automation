@@ -1,0 +1,13 @@
+
+###########################To get time and date stamp##########################################
+- name: Gather date stamp from ansible.
+  hosts: localhost
+
+  tasks:
+    - name: Ansible fact - ansible_date_time
+      debug:
+             var: ansible_date_time['date']
+    - name: Debug show cmd response with Jinja shorthand syntax
+      template:
+             src: ./ansible_date_time.j2
+             dest: ../../ansible_date_time.json
